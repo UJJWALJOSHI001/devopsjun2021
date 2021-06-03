@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    type: fronted
+  name: web2
+spec:
+  containers:
+  - image: httpd
+    name: web2

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: web1
+  name: centos
+spec:
+  containers:
+  - image: centos
+    name: centos
+    command: ["sleep"]
+    args: ["100"]
