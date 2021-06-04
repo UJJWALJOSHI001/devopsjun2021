@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata: 
+       name: myapp-rs
+spec:
+        replicas: 4
+        template:
+                 metadata: 
+                       name: myapp-pod
+                       labels:
+                               type: frontend
+                 spec:
+                         containers:
+                                 - name: myapp-con
+                                   image: httpd
+        selector:
+             matchExpressions:
+                  - {key: type, operator: In, values: [frontend,backend]}
